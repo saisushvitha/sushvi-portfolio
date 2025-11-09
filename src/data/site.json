@@ -1,0 +1,94 @@
+{
+    "brand": { "logoText": "PORTFOLIO" },
+    "hero": {
+      "intro": "Hi, I'm Sai Sushvita Chamarty",
+      "roles": ["Python", "Full-Stack", "React", "Node.js"],
+      "titlePrefix": "I'm a",
+      "titleSuffix": "Developer",
+      "ctaText": "Download CV",
+      "cvUrl": "#",
+      "photo": "/profile.jpg"
+    },
+    "about": {
+      "heading": "Personal Details",
+      "bio": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+      "dob": "06 June 1989",
+      "languages": "English - French - German",
+      "nationality": "USA",
+      "interests": "Music, Reading, journey",
+      "social": [
+        { "icon": "github", "url": "https://github.com/you" },
+        { "icon": "twitter", "url": "https://twitter.com/you" },
+        { "icon": "google", "url": "#" },
+        { "icon": "linkedin", "url": "https://linkedin.com/in/you" }
+      ]
+    },
+    "skills": [
+      { "name": "Android", "exp": "2 Year Experience", "logo": "/logos/android.svg" },
+      { "name": "Angular", "exp": "1 Year Experience", "logo": "/logos/angular.svg" },
+      { "name": "Bootstrap", "exp": "3 Year Experience", "logo": "/logos/bootstrap.svg" },
+      { "name": "Vue", "exp": "2 Year Experience", "logo": "/logos/vue.svg" },
+      { "name": "React", "exp": "8 Months Experience", "logo": "/logos/react.svg" },
+      { "name": "Mongodb", "exp": "3 Months Experience", "logo": "/logos/mongodb.svg" },
+      { "name": "Laravel", "exp": "1 Year Experience", "logo": "/logos/laravel.svg" },
+      { "name": "Node.js", "exp": "10 Months Experience", "logo": "/logos/node.svg" }
+    ],
+    "education": {
+      "title": "Education & Experience",
+      "education": [
+        {
+          "title": "MSc IT Master Degree",
+          "body": "Harvard University is an educational institution that offers graduate, professional, and research programs.",
+          "place": "Harvard University, Cambridge, MA, United States",
+          "years": "2010 - 2012"
+        },
+        { "title": "BCA college complete course", "years": "2007 - 2010" },
+        { "title": "High / Higher secondary school", "years": "1999 - 2007" }
+      ],
+      "experience": [
+        { "title": "ABC themes - Web Design IT Company", "years": "2020 - 2021" },
+        { "title": "DEF Themes - Creative full stack web design & development", "years": "2016 - 2019" },
+        { "title": "GHI Themes - Web & App IT Company", "years": "2013 - 2015" }
+      ]
+    },
+    "projects": {
+      "title": "My Projects",
+      "categories": ["All", "Angular", "Mongodb", "Bootstrap"],
+      "items": [
+        {
+          "title": "Auto Drive Project",
+          "url": "https://abcd-example.com",
+          "thumb": "/projects/p1.png",
+          "tags": ["Angular", "React", "jQuery"],
+          "category": "Angular"
+        },
+        {
+          "title": "Auto Drive Project",
+          "url": "https://abcd-example.com",
+          "thumb": "/projects/p2.png",
+          "tags": ["Bootstrap", "CSS", "JavaScript"],
+          "category": "Bootstrap"
+        },
+        {
+          "title": "Auto Drive Project",
+          "url": "https://abcd-example.com",
+          "thumb": "/projects/p3.png",
+          "tags": ["Mongodb", "JavaScript"],
+          "category": "Mongodb"
+        }
+      ]
+    },
+    "contact": {
+      "phone": "+1 234 567 89",
+      "hours": "9:00am to 7:00pm",
+      "email": "example@example.com",
+      "days": "Monday to Saturday"
+    },
+    "footer": {
+      "about": "In an ideal world this text wouldn’t exist, a client would acknowledge the importance of having web copy before the design starts.",
+      "links1": ["Home", "About", "services"],
+      "links2": ["Resume", "Client Say", "Projects"],
+      "links3": ["Blogs", "Contact", "Terms & condition"]
+    }
+  }
+  

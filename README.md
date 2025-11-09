@@ -1,2 +1,0 @@
-# sushvi-portfolio
-new portfolio
