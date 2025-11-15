@@ -18,7 +18,7 @@ export default function App() {
 
   return (
     <div className="font-body text-ink-700">
-      <Navbar brand={data.brand.logoText} />
+      <Navbar />
       <main>
         <Hero data={data.hero} />
         <About data={data.about} />

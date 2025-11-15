@@ -18,8 +18,8 @@ export default {
           },
         },
         fontFamily: {
-          display: ["Inter", "ui-sans-serif", "system-ui"],
-          body: ["Inter", "ui-sans-serif", "system-ui"],
+            display: ["Inter", "ui-sans-serif"],
+            body: ["Inter", "ui-sans-serif"],
         },
         boxShadow: {
           card: "0 10px 25px rgba(20,35,60,.08)",
