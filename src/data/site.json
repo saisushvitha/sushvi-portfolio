@@ -35,6 +35,10 @@
     ],
     "education": {
       "title": "Education & Experience",
+      "images":{
+        "education": "/education.jpg",
+        "experience": "/experience.jpg"
+      },
       "education": [
         {
           "title": "MSc IT Master Degree",

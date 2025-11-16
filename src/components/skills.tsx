@@ -1,18 +1,35 @@
+import Card from "./card";
 import type { Skill } from "../types";
 
 export default function Skills({ items }: { items: Skill[] }) {
   return (
-    <section className="bg-white">
-     <div className="container-section grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
-        {items.map(s => (
-          <div key={s.name} className="card p-4 sm:p-6 flex items-center gap-4">
-            <img src={s.logo} alt={s.name} className="h-10 w-10 object-contain" />
-            <div>
-              <p className="text-lg font-semibold text-ink-900">{s.name}</p>
-              <p className="text-sm text-ink-500">{s.exp}</p>
+    <section className="bg-white py-12">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* flex row of small cards, centered */}
+        <div className="flex flex-wrap justify-center gap-2">
+          {items.map((s) => (
+            <div
+              key={s.name}
+              className="w-full sm:w-[250px] md:w-[250px] lg:w-[250px]"
+            >
+              <Card>
+                <div className="px-6 py-4 flex items-center gap-4">
+                  <img
+                    src={s.logo}
+                    alt={s.name}
+                    className="h-10 w-10 object-contain"
+                  />
+                  <div>
+                    <p className="text-lg font-semibold text-ink-900">
+                      {s.name}
+                    </p>
+                    <p className="text-sm text-ink-500">{s.exp}</p>
+                  </div>
+                </div>
+              </Card>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );

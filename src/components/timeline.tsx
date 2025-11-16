@@ -1,80 +1,177 @@
 import type { EduItem, ExpItem } from "../types";
 import { useState } from "react";
 import Container from "./container";
-import Card from "./card";
+import { Minus, Plus } from "lucide-react";
 
-export default function Timeline({ data }: { data: { title: string; education: EduItem[]; experience: ExpItem[] } }) {
+type TimelineProps = {
+  data: {
+    title: string;
+    images: { education: string; experience: string };
+    education: EduItem[];
+    experience: ExpItem[];
+  };
+};
+
+export default function Timeline({ data }: TimelineProps) {
   return (
-    <section id="resume" className="bg-white py-24">
+    <section id="resume" className="bg-white py-10">
       <Container>
+        {/* Heading */}
         <div className="text-center">
-          <span className="inline-block bg-brand-50 text-brand-600 px-3 py-1 rounded-lg text-sm font-semibold">LIFE TIME</span>
-          <h2 className="mt-5 text-4xl font-extrabold text-ink-900">{data.title}</h2>
+          <h2 className="mt-5 text-3xl font-medium text-slate-700">
+            {data.title}
+          </h2>
           <p className="mt-4 text-ink-500 max-w-3xl mx-auto">
-            We craft digital, graphic and dimensional thinking, to create category leading brand experiences that have meaning .
+            We craft digital, graphic and dimensional thinking, to create
+            category leading brand experiences that have meaning .
           </p>
         </div>
-        <div className="mt-12 grid lg:grid-cols-2 gap-10">
-          <Card>
-            <Column title="Education">
-              {data.education.map((e, i) => <Edu key={i} item={e} />)}
-            </Column>
-          </Card>
-          <Card>
-            <Column title="Experience">
-              {data.experience.map((e, i) => <Exp key={i} item={e} />)}
-            </Column>
-          </Card>
+
+        {/* Education & Experience – stacked like the mock */}
+        <div className="mt-12 space-y-12">
+          <TimelineBlock
+            label="Education"
+            image={data.images.education}
+            items={data.education}
+            kind="edu"
+          />
+          <TimelineBlock
+            label="Experience"
+            image={data.images.experience}
+            items={data.experience}
+            kind="exp"
+          />
         </div>
       </Container>
     </section>
   );
 }
 
-function Column({ title, children }: { title: string; children: React.ReactNode }) {
-  return (
-    <div className="card p-8">
-      <div className="flex items-center gap-4 mb-6">
-        <div className="h-16 w-16 bg-slate-100 rounded-xl grid place-items-center">
-          {/* simple illustration block */}
-          <div className="h-8 w-8 bg-ink-900/80 rounded"></div>
-        </div>
-        <h3 className="text-2xl font-bold text-ink-900">{title}</h3>
-      </div>
-      <div className="divide-y">
-        {children}
-      </div>
-    </div>
-  );
-}
+type BlockProps = {
+  label: string;
+  image: string;
+  items: (EduItem | ExpItem)[];
+  kind: "edu" | "exp";
+};
 
-function Edu({ item }: { item: EduItem }) {
-  const [open, setOpen] = useState(true);
+function TimelineBlock({ label, image, items, kind }: BlockProps) {
   return (
-    <div className="py-6">
-      <div className="flex items-start justify-between">
-        <button onClick={() => setOpen(!open)} className="text-left flex-1">
-          <p className="text-lg font-semibold text-ink-900">{item.title}</p>
-          {open && (
-            <div className="mt-2 text-ink-600">
-              {item.body && <p className="mb-2">{item.body}</p>}
-              {item.place && <p className="font-medium">{item.place}</p>}
-            </div>
+    <div className="flex flex-col md:flex-row rounded-3xl overflow-hidden border border-slate-200 bg-white shadow-sm">
+      {/* Left illustration panel */}
+      <div className="w-full md:w-72 bg-[#f5fbff] flex flex-col items-center justify-center px-8 py-12">
+        <img
+          src={image}
+          alt={label}
+          className="w-32 h-32 object-contain mb-6"
+        />
+        <p className="text-xl font-semibold text-[#133b5c]">{label}</p>
+      </div>
+
+      {/* Right accordion list */}
+      <div className="flex-1 bg-white">
+        <div className="divide-y divide-slate-200">
+          {items.map((item, index) =>
+            kind === "edu" ? (
+              <EduRow
+                key={(item as EduItem).title + index}
+                item={item as EduItem}
+                defaultOpen={index === 0}
+              />
+            ) : (
+              <ExpRow
+                key={(item as ExpItem).title + index}
+                item={item as ExpItem}
+                defaultOpen={index === 0}
+              />
+            )
           )}
-        </button>
-        <span className="text-brand-600 font-semibold">{item.years}</span>
+        </div>
       </div>
     </div>
   );
 }
 
-function Exp({ item }: { item: ExpItem }) {
+/* ----------------- Education row ----------------- */
+
+function EduRow({
+  item,
+  defaultOpen = false,
+}: {
+  item: EduItem;
+  defaultOpen?: boolean;
+}) {
+  const [open, setOpen] = useState(defaultOpen);
+
   return (
-    <div className="py-6">
-      <div className="flex items-start justify-between">
-        <p className="text-lg font-semibold text-ink-900">{item.title}</p>
-        <span className="text-brand-600 font-semibold">{item.years}</span>
-      </div>
+    <div className={open ? "bg-[#f5fbff]" : "bg-white"}>
+      {/* Title + years */}
+      <button
+        type="button"
+        onClick={() => setOpen((v) => !v)}
+        className="w-full flex items-start justify-between gap-4 px-10 py-6 text-left"
+      >
+        <div className="flex items-start gap-3">
+          <span className="mt-1 text-teal-500 text-xl font-bold">
+            {open ? <Minus/> : <Plus/>}
+          </span>
+          <p className="text-base md:text-lg font-semibold text-[#133b5c]">
+            {item.title}
+          </p>
+        </div>
+        <span className="text-sm md:text-base font-semibold text-teal-500 whitespace-nowrap">
+          {item.years}
+        </span>
+      </button>
+
+      {/* Expanded content */}
+      {open && (
+        <div className="px-16 pb-7 text-sm md:text-base text-ink-600">
+          {item.body && <p className="mb-3">{item.body}</p>}
+          {item.place && (
+            <p className="font-semibold text-[#133b5c]">{item.place}</p>
+          )}
+        </div>
+      )}
+    </div>
+  );
+}
+
+/* ----------------- Experience row ----------------- */
+
+function ExpRow({
+  item,
+  defaultOpen = false,
+}: {
+  item: ExpItem;
+  defaultOpen?: boolean;
+}) {
+  const [open, setOpen] = useState(defaultOpen);
+
+  return (
+    <div className={open ? "bg-[#f5fbff]" : "bg-white"}>
+      <button
+        type="button"
+        onClick={() => setOpen((v) => !v)}
+        className="w-full flex items-start justify-between gap-4 px-10 py-6 text-left"
+      >
+        <div className="flex items-start gap-3">
+          <span className="mt-1 text-teal-500 text-xl font-bold">
+            {open ? <Minus/> : <Plus/>}
+          </span>
+          <p className="text-base md:text-lg font-semibold text-[#133b5c]">
+            {item.title}
+          </p>
+        </div>
+        <span className="text-sm md:text-base font-semibold text-teal-500 whitespace-nowrap">
+          {item.years}
+        </span>
+      </button>
+
+      {open && (
+        <div className="px-16 pb-7 text-sm md:text-base text-ink-600">
+          {/* later you can render description / tags here */}
+        </div>
+      )}
     </div>
   );
 }

@@ -31,7 +31,7 @@ export default function About({ data }: {
               <span className="relative z-10">{data.heading}</span>
               <span className="absolute left-0 bottom-1 h-2 w-full bg-amber-300 z-0 rounded-sm" />
             </p>
-            <p className="text-base text-black mb-6">{data.bio}</p>
+            <p className="text-base text-cyan-950 text-lg mb-4">{data.bio}</p>
 
             <div className="flex gap-4 mt-4">
               {data.social.map((s) => (
@@ -68,7 +68,7 @@ function Item({ label, value }: { label: string; value: string }) {
     <div className="flex items-center text-ink-500 text-sm sm:text-base">
       <span className="w-44 font-medium">{label}</span>
       <span className="mx-2">:</span>
-      <span className="text-zinc-950">{value}</span>
+      <span className="text-slate-500 font-medium">{value}</span>
     </div>
   );
 }
