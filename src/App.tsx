@@ -13,7 +13,7 @@ import Footer from "./components/footer";
 
 export default function App() {
   const [data, setData] = useState<SiteData | null>(null);
-  useEffect(() => { setData(dataJson as SiteData); }, []);
+  useEffect(() => { setData(dataJson); }, []);
   if (!data) return null;
 
   return (
@@ -27,7 +27,7 @@ export default function App() {
         <Projects data={data.projects} />
         <Contact data={data.contact} />
       </main>
-      <Footer data={data.footer} brand={data.brand.logoText} />
+      <Footer />
     </div>
   );
 }

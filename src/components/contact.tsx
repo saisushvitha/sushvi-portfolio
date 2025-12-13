@@ -5,7 +5,7 @@ type Props = { data: { phone: string; hours: string; email: string; days: string
 
 export default function Contact({ data }: Props) {
   return (
-    <section id="contact" className="bg-white py-16 sm:py-24">
+    <section id="contact" className="bg-white py-4 sm:py-6">
       <Container>
         <div className="grid lg:grid-cols-3 gap-10">
           <div className="lg:col-span-2">
