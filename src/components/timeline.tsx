@@ -112,7 +112,7 @@ function EduRow({
       >
         <div className="flex items-start gap-3">
           <span className="mt-1 text-teal-500 text-xl font-bold">
-            {open ? <Minus/> : <Plus/>}
+            {open ? <Minus /> : <Plus />}
           </span>
           <p className="text-base md:text-lg font-semibold text-[#133b5c]">
             {item.title}
@@ -156,7 +156,7 @@ function ExpRow({
       >
         <div className="flex items-start gap-3">
           <span className="mt-1 text-teal-500 text-xl font-bold">
-            {open ? <Minus/> : <Plus/>}
+            {open ? <Minus /> : <Plus />}
           </span>
           <p className="text-base md:text-lg font-semibold text-[#133b5c]">
             {item.title}
@@ -170,6 +170,9 @@ function ExpRow({
       {open && (
         <div className="px-16 pb-7 text-sm md:text-base text-ink-600">
           {/* later you can render description / tags here */}
+          {item.description && (
+            <p className="mb-2">{item.description}</p>
+          )}
         </div>
       )}
     </div>

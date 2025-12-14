@@ -1,7 +1,7 @@
 export type Social = { icon: "github" | "twitter" | "google" | "linkedin"; url: string };
-export type Skill = { name: string; exp: string; logo: string };
-export type EduItem = { title: string; images:Record<string, string>, body?: string; place?: string; years: string };
-export type ExpItem = { title: string; years: string };
+export type Skill = { name: string; exp: string; icon: string };
+export type EduItem = { title: string; images:Record<string, string>, body?: string; place?: string; years: string, };
+export type ExpItem = { title: string; years: string;  description?: string;  };
 export type ProjectItem = {
   title: string; url: string; thumb?: string;
   tags: string[]; category: string;

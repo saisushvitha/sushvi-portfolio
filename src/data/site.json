@@ -1,98 +1,189 @@
 {
-    "brand": { "logoText": "PORTFOLIO" },
-    "hero": {
-      "intro": "Hi, I'm Sai Sushvita Chamarty",
-      "roles": ["Python", "Full-Stack", "React", "Node.js"],
-      "titlePrefix": "I'm a",
-      "titleSuffix": "Developer",
-      "ctaText": "Download CV",
-      "cvUrl": "#",
-      "photo": "/profile.jpg"
-    },
-    "about": {
-      "heading": "Personal Details",
-      "bio": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
-      "dob": "06 June 1989",
-      "languages": "English - French - German",
-      "nationality": "USA",
-      "interests": "Music, Reading, journey",
-      "social": [
-        { "icon": "github", "url": "https://github.com/you" },
-        { "icon": "twitter", "url": "https://twitter.com/you" },
-        { "icon": "google", "url": "#" },
-        { "icon": "linkedin", "url": "https://linkedin.com/in/you" }
-      ]
-    },
-    "skills": [
-      { "name": "Android", "exp": "2 Year Experience", "logo": "/logos/android.svg" },
-      { "name": "Angular", "exp": "1 Year Experience", "logo": "/logos/angular.svg" },
-      { "name": "Bootstrap", "exp": "3 Year Experience", "logo": "/logos/bootstrap.svg" },
-      { "name": "Vue", "exp": "2 Year Experience", "logo": "/logos/vue.svg" },
-      { "name": "React", "exp": "8 Months Experience", "logo": "/logos/react.svg" },
-      { "name": "Mongodb", "exp": "3 Months Experience", "logo": "/logos/mongodb.svg" },
-      { "name": "Laravel", "exp": "1 Year Experience", "logo": "/logos/laravel.svg" },
-      { "name": "Node.js", "exp": "10 Months Experience", "logo": "/logos/node.svg" }
+  "brand": {
+    "logoText": "PORTFOLIO",
+    "logo": "/logo.png"
+  },
+  "hero": {
+    "intro": "Hi, I'm Sai Sushvita Chamarty",
+    "roles": [
+      "Python",
+      "Full-Stack",
+      "React",
+      "Node.js"
     ],
-    "education": {
-      "title": "Education & Experience",
-      "images":{
-        "education": "/education.jpg",
-        "experience": "/experience.jpg"
+    "titlePrefix": "I'm a",
+    "titleSuffix": "Developer",
+    "ctaText": "Download CV",
+    "cvUrl": "#",
+    "photo": "/profile.jpg"
+  },
+  "about": {
+    "heading": "Personal Details",
+    "bio": "I am currently a Programmer Analyst at Maximus Canada. I have an experience of 3 years in Full Stack Web Development, diving deeper into Machine Learning. I believe that to be successful in life, one needs to be obsessive with their dreams and keep working towards them.",
+    "dob": "1997",
+    "languages": "English - Hindi - Telugu",
+    "nationality": "India, Based in Canada",
+    "interests": "Machine Learning, Web Development, Cloud Computing",
+    "social": [
+      {
+        "icon": "github",
+        "url": "https://github.com/saisushvitha"
       },
-      "education": [
-        {
-          "title": "MSc IT Master Degree",
-          "body": "Harvard University is an educational institution that offers graduate, professional, and research programs.",
-          "place": "Harvard University, Cambridge, MA, United States",
-          "years": "2010 - 2012"
-        },
-        { "title": "BCA college complete course", "years": "2007 - 2010" },
-        { "title": "High / Higher secondary school", "years": "1999 - 2007" }
-      ],
-      "experience": [
-        { "title": "ABC themes - Web Design IT Company", "years": "2020 - 2021" },
-        { "title": "DEF Themes - Creative full stack web design & development", "years": "2016 - 2019" },
-        { "title": "GHI Themes - Web & App IT Company", "years": "2013 - 2015" }
-      ]
-    },
-    "projects": {
-      "title": "My Projects",
-      "categories": ["All", "Angular", "Mongodb", "Bootstrap"],
-      "items": [
-        {
-          "title": "Auto Drive Project",
-          "url": "https://abcd-example.com",
-          "thumb": "/projects/p1.png",
-          "tags": ["Angular", "React", "jQuery"],
-          "category": "Angular"
-        },
-        {
-          "title": "Auto Drive Project",
-          "url": "https://abcd-example.com",
-          "thumb": "/projects/p2.png",
-          "tags": ["Bootstrap", "CSS", "JavaScript"],
-          "category": "Bootstrap"
-        },
-        {
-          "title": "Auto Drive Project",
-          "url": "https://abcd-example.com",
-          "thumb": "/projects/p3.png",
-          "tags": ["Mongodb", "JavaScript"],
-          "category": "Mongodb"
-        }
-      ]
-    },
-    "contact": {
-      "phone": "+1 234 567 89",
-      "hours": "9:00am to 7:00pm",
-      "email": "example@example.com",
-      "days": "Monday to Saturday"
-    },
-    "footer": {
-      "about": "In an ideal world this text wouldn’t exist, a client would acknowledge the importance of having web copy before the design starts.",
-      "links1": ["Home", "About", "services"],
-      "links2": ["Resume", "Client Say", "Projects"],
-      "links3": ["Blogs", "Contact", "Terms & condition"]
-    }
+      {
+        "icon": "linkedin",
+        "url": "https://www.linkedin.com/in/sai-sushvita-chamarty-91626a17b/"
+      },
+      {
+        "icon": "twitter",
+        "url": "https://twitter.com/ChSushvita"
+      },
+      {
+        "icon": "google",
+        "url": "https://saisushvita.github.io"
+      }
+    ]
+  },
+ "skills": [
+  {
+    "name": "Frontend Engineering",
+    "exp": "4+ Years Experience",
+    "icon": "react"
+  },
+  {
+    "name": "Backend Engineering",
+    "exp": "4+ Years Experience",
+    "icon": "node-js"
+  },
+  {
+    "name": "DevOps & Cloud",
+    "exp": "4+ Years Experience",
+    "icon": "cloud"
+  },
+  {
+    "name": "CI / CD Pipelines",
+    "exp": "4+ Years Experience",
+    "icon": "code-branch"
+  },
+  {
+    "name": "Containers & Deployment",
+    "exp": "4+ Years Experience",
+    "icon": "docker"
   }
-  
+]
+,
+  "education": {
+    "title": "Education & Experience",
+    "images": {
+      "education": "/education.jpg",
+      "experience": "/experience.jpg"
+    },
+    "education": [
+      {
+        "title": "Masters in Applied Computer Science",
+        "body": "I got to explore a lot of things and worked on several research-level projects which dealt with real-time data. Started my journey in machine learning as well, working on various projects like single-celled RNA sequencing.",
+        "place": "St. Francis Xavier University",
+        "years": "Sept 2021 - April 2023"
+      },
+      {
+        "title": "Bachelor's Degree in Computer Science",
+        "body": "Started with baby steps learning about concepts, exposed to Java, Python, web development. Involved in many hackathons and contributed to tech projects which helped college gain NBA Accreditation.",
+        "place": "CMR Engineering College",
+        "years": "Jun 2015 - April 2019"
+      },
+      {
+        "title": "Technology Entrepreneurship Program",
+        "body": "Selected as student ambassador. Gained exposure to Design Thinking methods and access to training sessions from world-renowned experts.",
+        "place": "Indian School Of Business",
+        "years": "June 2017 - April 2019"
+      }
+    ],
+    "experience": [
+      {
+        "title": "Programmer Analyst - Maximus Canada",
+        "years": "May 2023 - present",
+        "description": "First Canadian company srole focused on modernization and migrating legacy applications to Next.js. Gained exposure to healthcare standards (HL7, FHIR) and tools like RabbitMQ, Docker, and Azure DevOps. Technologies: Next.js, HL7, FHIR, RabbitMQ, Docker, Azure DevOps."
+      },
+      {
+        "title": "Senior Software Engineer (Freelancer) - Bearsight",
+        "years": "Dec 2021 - April 2022",
+        "description": "Freelance full-stack work developing Power BI reports and data integrations; gained hands-on Business Intelligence experience. Technologies: Power BI, SQL, data integration."
+      },
+      {
+        "title": "Software Engineer - Virtusa Consulting Services",
+        "years": "May 2019 - August 2021",
+        "description": "Worked as a UI developer on projects for BT, spanning backend and front-end responsibilities. Hands-on with Spring Boot, Angular, and React (TypeScript); promoted twice. Technologies: Java, Spring Boot, Angular, React (TypeScript)."
+      }
+    ]
+  },
+  "projects": {
+    "title": "My Projects",
+    "categories": [
+      "All",
+      "Full-Stack",
+      "Machine Learning",
+      "Frontend"
+    ],
+    "items": [
+      {
+        "title": "Full Stack Web Applications",
+        "url": "https://github.com/saisushvitha",
+        "thumb": "/projects/p1.png",
+        "tags": [
+          "React",
+          "Node.js",
+          "MongoDB"
+        ],
+        "category": "Full-Stack"
+      },
+      {
+        "title": "Machine Learning Projects",
+        "url": "https://github.com/saisushvitha",
+        "thumb": "/projects/p2.png",
+        "tags": [
+          "Python",
+          "NLP",
+          "Computer Vision"
+        ],
+        "category": "Machine Learning"
+      },
+      {
+        "title": "Frontend Applications",
+        "url": "https://github.com/saisushvitha",
+        "thumb": "/projects/p3.png",
+        "tags": [
+          "React",
+          "Angular",
+          "TypeScript"
+        ],
+        "category": "Frontend"
+      }
+    ]
+  },
+  "contact": {
+    "phone": "+1 (902) 000-0000",
+    "hours": "9:00am to 6:00pm (EST)",
+    "email": "sai.sushvita@example.com",
+    "days": "Monday to Friday"
+  },
+  "footer": {
+    "about": "Passionate Full-Stack Developer and Machine Learning enthusiast based in Canada. I believe in continuous learning and tackling challenges with creative solutions.",
+    "links1": [
+      "Home",
+      "About",
+      "Skills",
+      "Projects"
+    ],
+    "links2": [
+      "Resume",
+      "Contact",
+      "GitHub",
+      "LinkedIn"
+    ],
+    "links3": [
+      "Blog",
+      "Portfolio",
+      "Certifications",
+      "Contact Me"
+    ]
+  }
+}

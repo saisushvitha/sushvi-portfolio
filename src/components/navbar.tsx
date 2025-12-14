@@ -28,7 +28,7 @@ export default function Navbar() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         {/* Brand */}
         <div className="flex items-center gap-2 text-ink-900 font-extrabold tracking-wide">
-          <span className="inline-flex h-6 w-6 rounded-md bg-teal-500" />
+          <img src="/logo.png" alt="logo" className="h-10 w-10 rounded-md object-cover" />
           <span>PORTFOLIO</span>
         </div>
 
