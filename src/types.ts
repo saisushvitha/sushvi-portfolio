@@ -1,6 +1,6 @@
-export type Social = { icon: "github" | "twitter" | "google" | "linkedin"; url: string };
+export type Social = { icon: string; url: string };
 export type Skill = { name: string; exp: string; icon: string };
-export type EduItem = { title: string; images:Record<string, string>, body?: string; place?: string; years: string, };
+export type EduItem = { title: string; images?: Record<string, string>; body?: string; place?: string; years: string };
 export type ExpItem = { title: string; years: string;  description?: string;  };
 export type ProjectItem = {
   title: string; url: string; thumb?: string;
@@ -18,7 +18,7 @@ export type EducationSection = {
 };
 
 export type SiteData = {
-  brand: { logoText: string };
+  brand: { logoText: string; logo: string };
   hero: { intro: string; roles: string[]; titlePrefix: string; titleSuffix: string; ctaText: string; cvUrl: string; photo: string };
   about: { heading: string; bio: string; dob: string; languages: string; nationality: string; interests: string; social: Social[] };
   skills: Skill[];
