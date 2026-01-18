@@ -1,4 +1,4 @@
-import Card from "./card";
+import Card from "./ui/card";
 import type { Skill } from "../types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import iconMap from "./icons";
@@ -6,7 +6,7 @@ import iconMap from "./icons";
 
 export default function Skills({ items }: { items: Skill[] }) {
   return (
-    <section className="bg-white py-12">
+    <section className="bg-white py-8">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-wrap justify-center gap-2">
           {items.map((s) => (

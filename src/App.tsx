@@ -5,10 +5,10 @@ import Navbar from "./components/navbar";
 import Hero from "./components/hero";
 import About from "./components/about";
 import Skills from "./components/skills";
-import Timeline from "./components/timeline";
 import Projects from "./components/projects";
 import Contact from "./components/contact";
 import Footer from "./components/footer";
+import Work from "./components/work";
 
 
 export default function App() {
@@ -23,7 +23,7 @@ export default function App() {
         <Hero data={data.hero} />
         <About data={data.about} />
         <Skills items={data.skills} />
-        <Timeline data={data.education} />
+        <Work data={data.education} />
         <Projects data={data.projects} />
         <Contact data={data.contact} />
       </main>

@@ -1,6 +1,6 @@
 import { Github, Twitter, Mail, Linkedin } from "lucide-react";
 import type { Social } from "../types";
-import Container from "./container";
+import Container from "./ui/container";
 import type { JSX } from "react";
 
 const icons: Record<Social["icon"], JSX.Element> = {

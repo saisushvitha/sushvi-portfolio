@@ -1,6 +1,6 @@
 import type { EduItem, ExpItem } from "../types";
 import { useState } from "react";
-import Container from "./container";
+import Container from "./ui/container";
 import { Minus, Plus } from "lucide-react";
 
 type TimelineProps = {
@@ -14,16 +14,15 @@ type TimelineProps = {
 
 export default function Timeline({ data }: TimelineProps) {
   return (
-    <section id="resume" className="bg-white py-10">
+    <section id="resume" className="bg-white py-8">
       <Container>
         {/* Heading */}
         <div className="text-center">
           <h2 className="mt-5 text-3xl font-medium text-slate-700">
             {data.title}
           </h2>
-          <p className="mt-4 text-ink-500 max-w-3xl mx-auto">
-            We craft digital, graphic and dimensional thinking, to create
-            category leading brand experiences that have meaning .
+          <p className="mt-4 text-ink-500 max-w-3xl mx-auto italic">
+            A snapshot of my academic foundation and hands-on industry experience that shape how I build reliable, scalable solutions.
           </p>
         </div>
 

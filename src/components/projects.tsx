@@ -1,80 +1,74 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import type { ProjectItem } from "../types";
-import Container from "./container";
-import Card from "./card";
-import { ExternalLink } from "lucide-react";
+import Container from "./ui/container";
+import Card from "./ui/card";
+import { Activity, Atom, Code, Cpu, ExternalLink } from "lucide-react";
+import Tabs from "./ui/tabs";
+import SectionHeader from "./ui/section-header";
 
-type Props = {
-    data: { title: string; categories: string[]; items: ProjectItem[] };
+type ProjectsData = {
+    title: string;
+    categories: string[];
+    items: ProjectItem[];
 };
 
-export default function Projects({ data }: Props) {
+type Props = {
+    data: ProjectsData;
+};
+
+const getProjectIcon = (project: ProjectItem) => {
+    if (project.tags?.includes("RxJS")) return Activity;
+    if (project.category === "Parallel Programming") return Cpu;
+    if (project.category === "React") return Atom;
+    return Code;
+};
+
+
+const Projects = ({ data }: Props) => {
     const [active, setActive] = useState<string>("All");
 
-    const filtered =
-        active === "All"
-            ? data.items
-            : data.items.filter((p) => p.category === active);
+    const filtered = useMemo(() => {
+        if (active === "All") return data.items;
+        return data.items.filter((p) => p.category === active);
+    }, [active, data.items]);
 
     return (
-        <section id="projects" className="bg-white py-24">
+        <section id="projects" className="bg-white py-8">
             <Container>
-                {/* Section heading */}
-                <div className="text-center">
-                    <span className="inline-block bg-brand-50 text-brand-600 px-3 py-1 rounded-lg text-xs font-bold">
-                        WORK
-                    </span>
-                    <h2 className="mt-5 text-3xl font-medium text-slate-700">
-                        {data.title}
-                    </h2>
-                    <p className="mt-4 text-ink-500 max-w-3xl mx-auto">
-                        We craft digital, graphic and dimensional thinking, to create
-                        category leading brand experiences that have meaning .
-                    </p>
-                </div>
+                <SectionHeader
+                    title={data.title}
+                    subtitle="A selection of projects that demonstrate my problem-solving skills, technical expertise, and real-world experience."
+                />
 
-                {/* Tabs */}
-                <div className="mt-10 border-b border-slate-200">
-                    <div className="flex justify-start">
-                        <div className="flex gap-8 text-sm sm:text-base">
-                            {data.categories.map((cat) => {
-                                const isActive = active === cat;
-                                return (
-                                    <button
-                                        key={cat}
-                                        type="button"
-                                        onClick={() => setActive(cat)}
-                                        className={`pb-3 -mb-px border-b-2 transition-colors ${isActive
-                                                ? "border-teal-500 text-ink-900"
-                                                : "border-transparent text-ink-500 hover:text-ink-700"
-                                            }`}
-                                    >
-                                        {cat}
-                                    </button>
-                                );
-                            })}
-                        </div>
-                    </div>
-                </div>
-
-
-
-                {/* Cards */}
-                <div className="mt-10 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-                    {filtered.map((p) => (
-                        <ProjectCard key={p.title + p.url} project={p} />
-                    ))}
-                </div>
+                <Tabs
+                    items={data.categories}
+                    active={active}
+                    onChange={setActive}
+                    label=""
+                />
+                <ProjectGrid items={filtered} />
             </Container>
         </section>
     );
-}
+};
 
-function ProjectCard({ project }: { project: ProjectItem }) {
+
+
+
+const ProjectGrid = ({ items }: { items: ProjectItem[] }) => (
+    <div className="mt-10 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+        {items.map((p) => (
+            <ProjectCard key={`${p.title}-${p.url}`} project={p} />
+        ))}
+    </div>
+);
+
+const ProjectCard = ({ project }: { project: ProjectItem }) => {
+    const Icon = getProjectIcon(project);
+
     return (
-        <Card>
+        <Card className="w-full max-w-[30rem] border-l-[3px] border-teal-500 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
             <div className="p-6 flex flex-col gap-4">
-                {/* Logo + title */}
                 <div className="flex items-center gap-4">
                     <div className="h-14 w-14 rounded-xl bg-slate-50 flex items-center justify-center overflow-hidden">
                         {project.thumb ? (
@@ -84,20 +78,18 @@ function ProjectCard({ project }: { project: ProjectItem }) {
                                 className="h-10 w-10 object-contain"
                             />
                         ) : (
-                            <span className="text-lg font-bold text-ink-500">
-                                {project.title.charAt(0)}
-                            </span>
+                            <Icon className="h-7 w-7 text-teal-500" />
                         )}
                     </div>
+
                     <div className="flex-1">
-                        <p className="text-lg font-semibold text-ink-900">
-                            {project.title}
-                        </p>
+                        <p className="text-lg font-semibold text-ink-900">{project.title}</p>
+
                         <a
                             href={project.url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="mt-1 inline-flex items-center text-sm text-teal-500 hover:text-teal-600"
+                            className="mt-1 inline-flex items-center text-sm text-teal-500 hover:text-teal-600 break-all"
                         >
                             {project.url}
                             <ExternalLink className="ml-1 h-4 w-4" />
@@ -105,18 +97,23 @@ function ProjectCard({ project }: { project: ProjectItem }) {
                     </div>
                 </div>
 
-                {/* Tags */}
-                <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag) => (
-                        <span
-                            key={tag}
-                            className="px-3 py-1 rounded-md bg-brand-50 text-brand-600 text-xs font-semibold uppercase tracking-wide"
-                        >
-                            {tag}
-                        </span>
-                    ))}
-                </div>
+                <TagList tags={project.tags} />
             </div>
         </Card>
     );
-}
+};
+
+const TagList = ({ tags }: { tags: string[] }) => (
+    <div className="flex flex-wrap gap-2 pt-1">
+        {tags.map((tag) => (
+            <span
+                key={tag}
+                className="inline-flex items-center rounded-full bg-slate-100 text-slate-700 px-3 py-1 text-xs font-semibold tracking-wide"
+            >
+                {tag}
+            </span>
+        ))}
+    </div>
+);
+
+export default Projects;

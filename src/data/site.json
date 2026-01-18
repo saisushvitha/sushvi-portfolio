@@ -19,7 +19,7 @@
   },
   "about": {
     "heading": "Personal Details",
-    "bio": "I am currently a Programmer Analyst at Maximus Canada. I have an experience of 3 years in Full Stack Web Development, diving deeper into Machine Learning. I believe that to be successful in life, one needs to be obsessive with their dreams and keep working towards them.",
+    "bio": "I am currently a Programmer Analyst at Maximus Canada. I have an experience of 4+ years in Full Stack Web Development, diving deeper into Machine Learning. I believe that to be successful in life, one needs to be obsessive with their dreams and keep working towards them.",
     "dob": "1997",
     "languages": "English - Hindi - Telugu",
     "nationality": "India, Based in Canada",
@@ -43,34 +43,33 @@
       }
     ]
   },
- "skills": [
-  {
-    "name": "Frontend Engineering",
-    "exp": "4+ Years Experience",
-    "icon": "react"
-  },
-  {
-    "name": "Backend Engineering",
-    "exp": "4+ Years Experience",
-    "icon": "node-js"
-  },
-  {
-    "name": "DevOps & Cloud",
-    "exp": "4+ Years Experience",
-    "icon": "cloud"
-  },
-  {
-    "name": "CI / CD Pipelines",
-    "exp": "4+ Years Experience",
-    "icon": "code-branch"
-  },
-  {
-    "name": "Containers & Deployment",
-    "exp": "4+ Years Experience",
-    "icon": "docker"
-  }
-]
-,
+  "skills": [
+    {
+      "name": "Frontend Engineering",
+      "exp": "4+ Years Experience",
+      "icon": "react"
+    },
+    {
+      "name": "Backend Engineering",
+      "exp": "4+ Years Experience",
+      "icon": "node-js"
+    },
+    {
+      "name": "DevOps & Cloud",
+      "exp": "4+ Years Experience",
+      "icon": "cloud"
+    },
+    {
+      "name": "CI / CD Pipelines",
+      "exp": "4+ Years Experience",
+      "icon": "code-branch"
+    },
+    {
+      "name": "Containers & Deployment",
+      "exp": "4+ Years Experience",
+      "icon": "docker"
+    }
+  ],
   "education": {
     "title": "Education & Experience",
     "images": {
@@ -119,50 +118,60 @@
     "title": "My Projects",
     "categories": [
       "All",
-      "Full-Stack",
-      "Machine Learning",
-      "Frontend"
+      "React",
+      "Parallel Programming"
     ],
     "items": [
       {
-        "title": "Full Stack Web Applications",
-        "url": "https://github.com/saisushvitha",
-        "thumb": "/projects/p1.png",
+        "title": "Travel List",
+        "url": "https://github.com/saisushvitha/travellist",
+        "thumb": "",
         "tags": [
           "React",
-          "Node.js",
-          "MongoDB"
-        ],
-        "category": "Full-Stack"
-      },
-      {
-        "title": "Machine Learning Projects",
-        "url": "https://github.com/saisushvitha",
-        "thumb": "/projects/p2.png",
-        "tags": [
-          "Python",
-          "NLP",
-          "Computer Vision"
-        ],
-        "category": "Machine Learning"
-      },
-      {
-        "title": "Frontend Applications",
-        "url": "https://github.com/saisushvitha",
-        "thumb": "/projects/p3.png",
-        "tags": [
-          "React",
-          "Angular",
+          "Vite",
           "TypeScript"
         ],
-        "category": "Frontend"
+        "category": "React"
+      },
+      {
+        "title": "React Hooks Games",
+        "url": "https://github.com/saisushvitha/React-Hooks-Games",
+        "thumb": "",
+        "tags": [
+          "React",
+          "Hooks",
+          "UI"
+        ],
+        "category": "React"
+      },
+      {
+        "title": "RxJS Test",
+        "url": "https://github.com/saisushvitha/rxjs_test",
+        "thumb": "",
+        "tags": [
+          "RxJS",
+          "Reactive",
+          "JavaScript"
+        ],
+        "category": "React"
+      },
+      {
+        "title": "Parallel Programming (MPI)",
+        "url": "https://github.com/saisushvitha/parallel_programming_MPI",
+        "thumb": "",
+        "tags": [
+          "MPI",
+          "Parallel",
+          "C/C++"
+        ],
+        "category": "Parallel Programming"
       }
     ]
   },
   "contact": {
     "phone": "+1 (902) 000-0000",
     "hours": "9:00am to 6:00pm (EST)",
-    "email": "sai.sushvita@example.com",
+    "email": "x2021gui@gmail.com",
     "days": "Monday to Friday"
   },
   "footer": {
