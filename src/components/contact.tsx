@@ -1,5 +1,5 @@
 import React from "react";
-import { Mail } from "lucide-react";
+import { Clock, Mail, Phone } from "lucide-react";
 import Container from "./ui/container";
 import Card from "./ui/card";
 import SectionHeader from "./ui/section-header";
@@ -51,15 +51,21 @@ const Contact = ({ data }: Props) => {
           </div>
 
           {/* Right: contact info */}
-          <Card className="h-fit">
-            <div className="p-8 space-y-8">
+          <Card className="h-fit lg:mt-24">
+            <div className="p-8 space-y-6">
               <InfoBlock
                 title={data.email}
                 subtitle={data.days}
                 icon={<Mail size={20} />}
               />
+              <InfoBlock
+                title={data.hours}
+                subtitle="Hours"
+                icon={<Clock size={20} />}
+              />
             </div>
           </Card>
+
         </div>
       </Container>
     </section>
