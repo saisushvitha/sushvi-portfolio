@@ -1,5 +1,5 @@
 import React from "react";
-import { Clock, Mail, Phone } from "lucide-react";
+import { Clock, Mail } from "lucide-react";
 import Container from "./ui/container";
 import Card from "./ui/card";
 import SectionHeader from "./ui/section-header";
@@ -30,24 +30,41 @@ const Contact = ({ data }: Props) => {
               align="left"
             />
 
-            <form className="mt-8 grid sm:grid-cols-2 gap-6">
-              <Input placeholder="Your name" />
-              <Input placeholder="Your email" />
+            <form
+              name="contact"
+              method="POST"
+              data-netlify="true"
+              data-netlify-honeypot="bot-field"
+              className="mt-8 grid sm:grid-cols-2 gap-6"
+            >
+              {/* required hidden fields for Netlify */}
+              <input type="hidden" name="form-name" value="contact" />
+              <input type="hidden" name="bot-field" />
 
-              <Input className="sm:col-span-2" placeholder="Subject" />
+              <Input name="name" placeholder="Your name" />
+              <Input name="email" placeholder="Your email" />
 
-              <Input placeholder="Phone (optional)" />
+              <Input
+                name="subject"
+                className="sm:col-span-2"
+                placeholder="Subject"
+              />
 
-              <Textarea className="sm:col-span-2" placeholder="Enter your message..." />
+              <Input name="phone" placeholder="Phone (optional)" />
+
+              <Textarea
+                name="message"
+                className="sm:col-span-2"
+                placeholder="Enter your message..."
+              />
 
               <button
-                type="button"
-                className="w-full sm:w-max px-6 py-3 rounded-xl bg-brand-500 text-white font-semibold hover:bg-brand-600 transition shadow-sm"
+                type="submit"
+                className="w-full sm:w-max px-6 py-3 rounded-xl bg-teal-500 text-white font-semibold hover:bg-teal-600 transition shadow-sm"
               >
                 Send message
               </button>
             </form>
-
           </div>
 
           {/* Right: contact info */}
@@ -65,7 +82,6 @@ const Contact = ({ data }: Props) => {
               />
             </div>
           </Card>
-
         </div>
       </Container>
     </section>
@@ -85,7 +101,7 @@ const InfoBlock = ({ title, subtitle, icon }: BlockProps) => {
         {icon}
       </div>
       <div>
-        <p className="font-semibold text-ink-900">{title}</p>
+        <p className="font-semibold text-ink-900 break-all">{title}</p>
         <p className="text-ink-500">{subtitle}</p>
       </div>
     </div>
