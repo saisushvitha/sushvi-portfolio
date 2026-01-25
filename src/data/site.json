@@ -1,7 +1,7 @@
 {
   "brand": {
     "logoText": "PORTFOLIO",
-    "logo": "/logo.png"
+    "logo": "logo.png"
   },
   "hero": {
     "intro": "Hi, I'm Sai Sushvita Chamarty",
@@ -15,7 +15,7 @@
     "titleSuffix": "Developer",
     "ctaText": "Download CV",
     "cvUrl": "#",
-    "photo": "/profile.jpg"
+    "photo": "profile.jpg"
   },
   "about": {
     "heading": "Personal Details",
@@ -73,8 +73,8 @@
   "education": {
     "title": "Education & Experience",
     "images": {
-      "education": "/education.jpg",
-      "experience": "/experience.jpg"
+      "education": "education.jpg",
+      "experience": "experience.jpg"
     },
     "education": [
       {

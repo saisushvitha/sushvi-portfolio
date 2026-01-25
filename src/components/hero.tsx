@@ -19,7 +19,7 @@ export default function Hero({ data }: Props) {
                 {/* Left: image (reduced sizes) */}
                 <div className="order-2 md:order-1 flex justify-center md:justify-start">
                     <img
-                        src={data.photo}
+                        src={`${import.meta.env.BASE_URL}${data.photo}`}
                         alt="Profile"
                         loading="eager"
                         className="w-44 sm:w-64 md:w-[340px] object-cover rounded-[2rem]"
